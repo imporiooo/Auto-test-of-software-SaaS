@@ -1,5 +1,3 @@
-# Auto-test-of-software-SaaS-
-
 # Auto test of software
 
 ## Краткое описание
