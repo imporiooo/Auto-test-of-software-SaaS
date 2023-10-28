@@ -1,5 +1,10 @@
 # Auto test of software
 
+# Участники проекта
+- Dorogov Maxim (m.dorogow@gmail.com) 
+- Gureev Egor (egorgureeff@yandex.ru)
+- Dresvyanin Kirill (dresv.kirill@mail.ru)
+
 ## Краткое описание
 ATOS (Auto test of software) - сервис, принцип которого заключается в проверке кода пользователя по выбранным им параметрам.
 
@@ -13,4 +18,5 @@ ATOS (Auto test of software) - сервис, принцип которого з�
 - Git
 
 ## Используемые материалы
-- https://www.geeksforgeeks.org/getting-started-with-testing-in-python/ https://github.com/VladislavEremeev/QA_bible
+- https://www.geeksforgeeks.org/getting-started-with-testing-in-python/
+- https://github.com/VladislavEremeev/QA_bible
