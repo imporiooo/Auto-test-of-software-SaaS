@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 # Auto-test-of-software-SaaS-
-test egor
 
-=======
 # Auto test of software
 
 ## Краткое описание
@@ -19,4 +16,3 @@ ATOS (Auto test of software) - сервис, принцип которого з�
 
 ## Используемые материалы
 - https://www.geeksforgeeks.org/getting-started-with-testing-in-python/ https://github.com/VladislavEremeev/QA_bible
->>>>>>> main
