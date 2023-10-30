@@ -13,4 +13,5 @@ ATOS (Auto test of software) - сервис, принцип которого з�
 - Git
 
 ## Используемые материалы
-- https://www.geeksforgeeks.org/getting-started-with-testing-in-python/ https://github.com/VladislavEremeev/QA_bible
+- https://www.geeksforgeeks.org/getting-started-with-testing-in-python/
+- https://github.com/VladislavEremeev/QA_bible
