@@ -1,9 +1,10 @@
 # Auto test of software
 
-# Участники проекта
-- Dorogov Maxim (m.dorogow@gmail.com) 
-- Gureev Egor (egorgureeff@yandex.ru)
-- Dresvyanin Kirill (dresv.kirill@mail.ru)
+## Участники проекта
+
+- [Dorogov Maxim](https://github.com/H0ovy) (m.dorogow@gmail.com)
+- [Gureev Egor](https://github.com/imporiooo) (egorgureeff@yandex.ru) 
+- [Dresvyanin Kirill](https://github.com/YaKulibyaka) (dresv.kirill@mail.ru)
 
 ## Краткое описание
 ATOS (Auto test of software) - сервис, принцип которого заключается в проверке кода пользователя по выбранным им параметрам.
