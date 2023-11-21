@@ -14,7 +14,7 @@ def tasks():
 def task1():
     if request.method == 'POST': 
         text1 = request.form.get('textarea1')
-        with open('task1.txt', 'w') as f:
+        with open('task1.py', 'w') as f:
             f.write(text1)
 
     return render_template('task1.html')
@@ -23,7 +23,7 @@ def task1():
 def task2():
     if request.method == 'POST': 
         text2 = request.form.get('textarea2')
-        with open('task2.txt', 'w') as f:
+        with open('task2.py', 'w') as f:
             f.write(text2)
     return render_template('task2.html')
 
