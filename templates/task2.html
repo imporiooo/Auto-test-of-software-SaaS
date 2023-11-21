@@ -5,13 +5,20 @@
   button  {background-color: white; padding: 14px 40px; border-radius: 4px; transition-duration: 0.4s;}
   button:hover {background-color: black;color: white;}
   h1 {color:white; position: relative;left: 50%;}
+  p1 {color:white; font-size: 150%;}
+  label {color:white; font-size: 100%;}
 </style>
 </head>
 <body>
-    <body style="background-color:#2a2e33">
-    <h1> Task #2 will be here soon! </h1>
-    <form>
-        <h2><button formaction="http://127.0.0.1:5000/tasks">Go back</button></h2>
-    </form>
+  <body style="background-color:#2a2e33"></body>
+  <h1>Task #2</h1>
+  <label for="textarea">Text for the first task</label>
+  <p></p>
+  <form method="post">
+    <div>
+      <textarea id="textarea" name="textarea2" rows="15" cols="65" placeholder="I'm so tired of HTML"></textarea>
+    </div>
+      <input type="submit" value="Save your answer">
+  </form>
 </body>
 </html>
