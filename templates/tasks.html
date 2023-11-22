@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <style>
-  button  {position: relative; left: 5%; background-color: white; padding: 14px 40px; border-radius: 4px; transition-duration: 0.4s;}
+  .button1  {position: fixed; left: 5%; top: 10%; background-color: white; padding: 14px 40px;  transition-duration: 0.4s;}
+  .button2  {position: fixed; left: 5%; top: 15%; background-color: white; padding: 14px 40px;  transition-duration: 0.4s;}
+  .button3  {position: fixed; left: 5%; top: 20%; background-color: white; padding: 14px 40px;  transition-duration: 0.4s;}
+  .button4  {position: fixed; left: 5%; top: 25%; background-color: white; padding: 14px 40px;  transition-duration: 0.4s;}
+  .button5  {position: fixed; left: 5%; top: 30%; background-color: white; padding: 14px 40px;  transition-duration: 0.4s;}
   button:hover {background-color: black;color: white;}
 </style>
 </head>
@@ -10,8 +14,14 @@
     <body style="background-color:#2a2e33">
     <h1><font color="white"> Tasks: </font></h1>
 <form>
-    <h2><button formaction="http://127.0.0.1:5000/tasks/task1">Task 1</button></h2>
-    <h3><button formaction="http://127.0.0.1:5000/tasks/task2">Task 2</button></h3>
+    <h2><button class="button1" formaction="http://127.0.0.1:5000/tasks/task1">Task 1</button></h2>
+    <h3><button class="button2" formaction="http://127.0.0.1:5000/tasks/task2">Task 2</button></h3>
+    <h3><button class="button3" formaction="http://127.0.0.1:5000/tasks/task3">Task 3</button></h3>
+    <h3><button class="button4" formaction="http://127.0.0.1:5000/tasks/task4">Task 4</button></h3>
+    <h3><button class="button5" formaction="http://127.0.0.1:5000/tasks/task5">Task 5</button></h3>
+</form>
+</form>
+</form>
 </form>
 </body>
 </html>
