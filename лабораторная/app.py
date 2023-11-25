@@ -16,8 +16,8 @@ def submit_code():
         file.write(user_code)
 
     # Запуск тестов
-    result = subprocess.run(
-        ['pytest', 'test_user_code.py'], capture_output=True)
+    import test_user_code 
+    result = test_user_code.test_add_function()
     return result.stdout.decode()
 
 
