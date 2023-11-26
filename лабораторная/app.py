@@ -14,7 +14,7 @@ def submit_code():
     user_code = request.form['user_code']
     print(user_code)
 
-    # Сначала сохраняем новый код во временный файл
+    
     with open('user_code.py', 'w') as file:
         file.write(user_code)
 
