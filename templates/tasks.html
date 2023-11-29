@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-  .button1  {position: fixed; left: 5%; top: 10%; background-color: white; padding: 14px 40px;  transition-duration: 0.4s;}
-  .button2  {position: fixed; left: 5%; top: 15%; background-color: white; padding: 14px 40px;  transition-duration: 0.4s;}
-  .button3  {position: fixed; left: 5%; top: 20%; background-color: white; padding: 14px 40px;  transition-duration: 0.4s;}
-  .button4  {position: fixed; left: 5%; top: 25%; background-color: white; padding: 14px 40px;  transition-duration: 0.4s;}
-  .button5  {position: fixed; left: 5%; top: 30%; background-color: white; padding: 14px 40px;  transition-duration: 0.4s;}
-  button:hover {background-color: black;color: white;}
-</style>
+  <link rel="shortcut icon" type="image/x-icon" href="static/A.ico" />
+  <title>Task Selection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style_for_task_selection.css') }}">
 </head>
 <body>
-    <body style="background-color:#2a2e33">
-    <h1><font color="white"> Tasks: </font></h1>
+    <center><h1>Tasks</h1></center>
 <form>
-    <h2><button class="button1" formaction="http://127.0.0.1:5000/tasks/task1">Task 1</button></h2>
-    <h3><button class="button2" formaction="http://127.0.0.1:5000/tasks/task2">Task 2</button></h3>
-    <h3><button class="button3" formaction="http://127.0.0.1:5000/tasks/task3">Task 3</button></h3>
-    <h3><button class="button4" formaction="http://127.0.0.1:5000/tasks/task4">Task 4</button></h3>
-    <h3><button class="button5" formaction="http://127.0.0.1:5000/tasks/task5">Task 5</button></h3>
-</form>
-</form>
-</form>
+  <hr style="height:2px;border-width:0;color:black;background-color:white"><br>
+  <div1><p1>Task #1</p1></div1>
+  <br><br>
+  <div><p2>There will be a description for the first task</p2></div>
+  <h2><button class="button1" formaction="http://127.0.0.1:5000/tasks/task1">Start</button></h2>
+  <br>
+  <p1>Task #2</p1>
+  <br><br>
+  <div><p2>There will be a description for the second task</p2></div>
+  <h3><button class="button1" formaction="http://127.0.0.1:5000/tasks/task2">Start</button></h3>
+  <br>
+  <p1>Task #2</p1>
+  <br><br>
+  <div><p2>There will be a description for the third task</p2></div>
+  <h3><button class="button1" formaction="http://127.0.0.1:5000/tasks/task3">Start</button></h3>
+  <br>
+  <p1>Task #2</p1>
+  <br><br>
+  <div><p2>There will be a description for the fourth task</p2></div>
+  <h3><button class="button1" formaction="http://127.0.0.1:5000/tasks/task4">Start</button></h3>
+  <br>
+  <p1>Task #2</p1>
+  <br><br>
+  <div><p2>There will be a description for the fifth task</p2></div>
+  <h3><button class="button1" formaction="http://127.0.0.1:5000/tasks/task5">Start</button></h3>
 </form>
 </body>
 </html>

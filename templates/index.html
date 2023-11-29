@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    .button1  {display: block; position: fixed; left: 48%; top: 20%; background-color: white; width: 150px; padding: 14px 40px; border-radius: 4px; transition-duration: 0.4s;}
-    .button2  {display: block; position: fixed; left: 48%; top: 25%; background-color: white; width: 150px; padding: 14px 40px; border-radius: 4px; transition-duration: 0.4s;}
-    button:hover {background-color: black;color: white;}
-    h1 {color:white; position: absolute;left: 50%;}
-    p1 {color: grey; position: fixed; top: 10%; left: 48%;}
-    h2  {color: white}
-</style>
+    <link rel="shortcut icon" type="image/x-icon" href="static/A.ico" />
+    <title>ATOS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <body style="background-color:#2a2e33">
     <h1>ATOS</h1>
-    <p1>Auto Test Of Software</p1>
+    <center><p1>Auto Test Of Software</p1></center>
+    <br><br>
 <form>
-    <h2><button class="button1" formaction="http://127.0.0.1:5000/tasks">Tasks</button></h2>
-    <h3><button class="button2" formaction="http://127.0.0.1:5000/profile">Profile</button></h3>
+    <center><h2><button class="button1" formaction="http://127.0.0.1:5000/tasks">Tasks</button></h2></center>
+    <center><button class="button1" formaction="http://127.0.0.1:5000/profile">Profile</button></center>
 </form>
 </body>
-</html>
+</html> 

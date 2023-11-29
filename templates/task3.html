@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-  button  {background-color: white; padding: 14px 40px; border-radius: 4px; transition-duration: 0.4s;}
-  button:hover {background-color: black;color: white;}
-  h1 {color:white; position: relative;left: 50%;}
-  .p1 {color:white; font-size: 150%;}
-  label {color:white; font-size: 100%;}
-</style>
+  <link rel="shortcut icon" type="image/x-icon" href="static/A.ico" />
+  <title>Task3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_for_tasks.css') }}">
 </head>
 <body>
-    <body style="background-color:#2a2e33"></body>
     <h1>Task #3</h1>
     <label for="textarea">Text for the third task</label>
     <p></p>
     <form method="post">
-      <div>
-        <textarea id="textarea" name="textarea" rows="15" cols="65" placeholder="I'm so tired of HTML"></textarea>
+      <div class="grow-wrap">
+        <textarea id="textarea" name="textarea" rows="15" cols="65" placeholder="I'm so tired of HTML" required
+        onInput="this.parentNode.dataset.replicatedValue = this.value" spellcheck="false"
+        onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}" ></textarea>
       </div>
-        <input type="submit" value="Save your answer">
+        <input type="submit" style="cursor:pointer" value="Save your answer">
     </form>
 </body>
 </html>
