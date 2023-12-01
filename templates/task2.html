@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="shortcut icon" type="image/x-icon" href="static/A.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="static/A.ico" >
   <title>Task2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles_for_tasks.css') }}">
@@ -12,7 +12,7 @@
   <p></p>
   <form method="post">
     <div class="grow-wrap">
-      <textarea id="textarea" name="textarea" rows="15" cols="65" placeholder="I'm so tired of HTML" required
+      <textarea id="textarea" name="textarea" rows="15" cols="65" placeholder="Write your code in Python here" required
       onInput="this.parentNode.dataset.replicatedValue = this.value" spellcheck="false"
       onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}" ></textarea>
     </div>
