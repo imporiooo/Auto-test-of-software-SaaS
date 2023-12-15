@@ -40,6 +40,7 @@ input[type=submit]  {
     font-size: 18px;
     position: relative;
     top: 5px;
+
 }
 textarea {
     width: 50%;
@@ -76,3 +77,10 @@ textarea {
     font: inherit;
     grid-area: 1 / 1 / 2 / 2;
   }
+.tasktext {
+    background-color: rgb(77, 74, 74);
+    width: 95%;
+    border-radius: 20px;
+    border: 1px solid rgb(77, 74, 74);
+    padding: 20px;
+}

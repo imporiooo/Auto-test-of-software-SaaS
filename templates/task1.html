@@ -8,12 +8,20 @@
 </head>
 <body>
     <h1>Task #1</h1>
-    <label for="textarea">Text for the first task</label>
-    <p></p>
-    <form action="/submit" method="post">
+    <div class="tasktext">
+    <label for="textarea">Напишите функцию для сложения двух натуральных чисел.<br>
+       Программа должна принимать на вход два натуральных числа и возвращать их сумму.<br><br>
+
+      Формат входных данных:<br>
+      два натуральных числа.<br><br>
+      
+      Формат выходных данных:<br> 
+      результат сложения введенных чисел.</label>
+    </div>
+    <br>
+    <form action="/tasks/task1/submit" method="post">
       <div class="grow-wrap">
-        <textarea id="textarea" name="user_code" rows="15" cols="65" placeholder="Write your code in Python here" required
-        onInput="this.parentNode.dataset.replicatedValue = this.value" spellcheck="false"
+        <textarea id="textarea" name="user_code" rows="15" cols="65" placeholder="Write your code in Python here" required onInput="this.parentNode.dataset.replicatedValue = this.value" spellcheck="false"
         onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}" ></textarea>
       </div>
         <input type="submit" style="cursor:pointer" value="Save your answer">

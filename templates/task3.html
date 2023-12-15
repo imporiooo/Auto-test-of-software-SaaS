@@ -8,15 +8,24 @@
 </head>
 <body>
     <h1>Task #3</h1>
-    <label for="textarea">Text for the third task</label>
-    <p></p>
-    <form method="post">
-      <div class="grow-wrap">
-        <textarea id="textarea" name="textarea" rows="15" cols="65" placeholder="Write your code in Python here" required
-        onInput="this.parentNode.dataset.replicatedValue = this.value" spellcheck="false"
-        onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}" ></textarea>
+    <div class="tasktext">
+      <label for="textarea">Напишите программу, которая считывает натуральное число n и выводит первые n чисел последовательности Фибоначчи.<br><br>
+
+        Формат входных данных:<br>
+        На вход программе подается одно число n (n≤100) – количество членов последовательности.<br><br>
+        
+        Формат выходных данных:<br>
+        Программа должна вывести члены последовательности Фибоначчи, отделенные символом пробела.<br><br>
+        Примечание:<br> 
+        Последовательность Фибоначчи – это последовательность натуральных чисел, где каждое последующее число является суммой двух предыдущих:</label>
       </div>
-        <input type="submit" style="cursor:pointer" value="Save your answer">
-    </form>
-</body>
-</html>
+      <br>
+      <form action="/tasks/task3/submit" method="post">
+        <div class="grow-wrap">
+          <textarea id="textarea" name="user_code" rows="15" cols="65" placeholder="Write your code in Python here" required onInput="this.parentNode.dataset.replicatedValue = this.value" spellcheck="false"
+          onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}" ></textarea>
+        </div>
+          <input type="submit" style="cursor:pointer" value="Save your answer">
+      </form>
+  </body>
+  </html>

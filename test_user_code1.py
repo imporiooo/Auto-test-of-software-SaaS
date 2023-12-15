@@ -1,5 +1,5 @@
 import pytest
-import user_code  # Импортируем модуль с пользовательским кодом
+import user_code1  # Импортируем модуль с пользовательским кодом
 
 
 @pytest.mark.parametrize("input_data, expected_output", [
@@ -7,5 +7,5 @@ import user_code  # Импортируем модуль с пользовате�
     ((4, 6), 10)
 ])
 def test_add_function(input_data, expected_output):
-    result = user_code.add(*input_data)
+    result = user_code1.add(*input_data)
     assert result == expected_output, f"Ожидалось {expected_output}, но получили {result}"
