@@ -15,5 +15,15 @@
   "test_user_code3.py::test_fibonacci_num[2-1 1 ]",
   "test_user_code3.py::test_fibonacci_num[22-1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 ]",
   "test_user_code3.py::test_fibonacci_num[3-1 1 2 ]",
-  "test_user_code3.py::test_fibonacci_num[5-1 1 2 3 5 ]"
+  "test_user_code3.py::test_fibonacci_num[5-1 1 2 3 5 ]",
+  "test_user_code5.py::test_fibonacci_num[1-1]",
+  "test_user_code5.py::test_fibonacci_num[10-1]",
+  "test_user_code5.py::test_fibonacci_num[100-4]",
+  "test_user_code5.py::test_fibonacci_num[2111-86]",
+  "test_user_code5.py::test_fibonacci_num[25-1]",
+  "test_user_code5.py::test_fibonacci_num[4-4]",
+  "test_user_code5.py::test_fibonacci_num[49-7]",
+  "test_user_code5.py::test_fibonacci_num[499-25]",
+  "test_user_code5.py::test_fibonacci_num[5-1]",
+  "test_user_code5.py::test_fibonacci_num[9-5]"
 ]

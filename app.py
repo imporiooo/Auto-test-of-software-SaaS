@@ -30,10 +30,10 @@ def submit_code1():
         file.write(user_code1)
 
     # Запуск тестов
-    result1 = subprocess.run(['pytest', 'test_user_code1.py'], capture_output=True, text=True)
+    result = subprocess.run(['pytest', 'test_user_code1.py'], capture_output=True, text=True)
 
     # Проверяем результат выполнения тестов
-    if result1.returncode == 0:
+    if result.returncode == 0:
         return render_template('correct.html')
     else:
         return render_template('incorrect.html')
@@ -56,9 +56,9 @@ def submit_code2():
     with open('user_code2.py', 'w') as file:
         file.write(user_code2)
 
-    result2 = subprocess.run(['pytest', 'test_user_code2.py'], capture_output=True, text=True)
+    result = subprocess.run(['pytest', 'test_user_code2.py'], capture_output=True, text=True)
 
-    if result2.returncode == 0:
+    if result.returncode == 0:
         return render_template('correct.html')
     else:
         return render_template('incorrect.html')
@@ -81,9 +81,9 @@ def submit_code3():
     with open('user_code3.py', 'w') as file:
         file.write(user_code3)
 
-    result2 = subprocess.run(['pytest', 'test_user_code3.py'], capture_output=True, text=True)
+    result = subprocess.run(['pytest', 'test_user_code3.py'], capture_output=True, text=True)
 
-    if result2.returncode == 0:
+    if result.returncode == 0:
         return render_template('correct.html')
     else:
         return render_template('incorrect.html')
@@ -92,26 +92,50 @@ def submit_code3():
     
 
     
-@app.route('/tasks/task4', methods=['GET', 'POST'])
+@app.route('/tasks/task4')
 def task4():
-    if request.method == 'POST': 
-        text4 = request.form.get('textarea')
-        with open('task3.py', 'w') as f:
-            f.write(text4)
     return render_template('task4.html')
 
+
+@app.route('/tasks/task4/submit', methods=['POST'])
+def submit_code4():
+    user_code4 = request.form['user_code']
+    print(user_code4)
+
+    
+    with open('user_code4.py', 'w') as file:
+        file.write(user_code4)
+
+    result = subprocess.run(['pytest', 'test_user_code4.py'], capture_output=True, text=True)
+
+    if result.returncode == 0:
+        return render_template('correct.html')
+    else:
+        return render_template('incorrect.html')
 
             # TASK 5
     
 
     
-@app.route('/tasks/task5', methods=['GET', 'POST'])
+@app.route('/tasks/task5')
 def task5():
-    if request.method == 'POST': 
-        text5 = request.form.get('textarea')
-        with open('task5.py', 'w') as f:
-            f.write(text5)
     return render_template('task5.html')
+
+@app.route('/tasks/task5/submit', methods=['POST'])
+def submit_code5():
+    user_code5 = request.form['user_code']
+    print(user_code5)
+
+    
+    with open('user_code5.py', 'w') as file:
+        file.write(user_code5)
+
+    result = subprocess.run(['pytest', 'test_user_code5.py'], capture_output=True, text=True)
+
+    if result.returncode == 0:
+        return render_template('correctved.html')
+    else:
+        return render_template('incorrect.html')
 
 @app.route("/profile")
 def profileuser():

@@ -1,5 +1,5 @@
 import pytest
-import user_code3  # Импортируем модуль с пользовательским кодом
+import user_code3
 
 
 @pytest.mark.parametrize("input_data, expected_output", [
