@@ -13,6 +13,16 @@ body {
     position: relative;
     top: -75px;
 }
+.button2  {    
+    background-color: rgb(77, 74, 74); 
+    color:white;
+    border-radius: 20px; 
+    width: 400px; 
+    padding: 14px 40px; 
+    border: 1px solid rgb(77, 74, 74);
+    transition-duration: 0.4s;
+    font-size: 25px;
+}
 button:hover {
     background-color: black;
     color: white;
@@ -59,4 +69,15 @@ div {
 img {
     height: 30%;
     width: 30%;
+}
+input[type=button]  {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(77, 74, 74); 
+    color:white;
+    border-radius: 20px; 
+    width: 220px; 
+    padding: 14px 40px; 
+    border: 1px solid rgb(77, 74, 74);
+    transition-duration: 0.4s;
+    font-size: 18px;
 }
