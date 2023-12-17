@@ -2,12 +2,11 @@ from flask import Flask, make_response, request, render_template, redirect, url_
 import subprocess, sqlite3
 from hashlib import sha256
 
-app = Flask(__name__, static_folder="static")
-
+app = Flask(__name__,static_folder="static")
 
 @app.route('/')
 def transfer():
-    return render_template('index.html')
+    return render_template('mainpage.html')
 
 
 @app.route('/tasks')
@@ -221,12 +220,6 @@ def logout():
     # Удаляем имя пользователя из сессии
     session.pop('username', None)
     return redirect(url_for('login'))
-
-
-@app.route('/user/<int:user_id>/')
-def user_profile(user_id):
-    return "Profile page of user #{}".format(user_id), 200, {'Content-Type': 'text/markdown'}
-
 
 if __name__ == "__main__":
     app.run(debug=True)
