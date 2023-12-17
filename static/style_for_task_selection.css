@@ -29,6 +29,7 @@ p2 {
     padding: 14px 40px;  
     transition-duration: 0.4s;
     position: relative;
+    top: -5px;
     left: 7%;
     font-size: 18px;
 }

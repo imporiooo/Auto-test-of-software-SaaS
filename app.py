@@ -5,7 +5,7 @@ app = Flask(__name__,static_folder="static")
 
 @app.route('/')
 def transfer():
-    return render_template('index.html')
+    return render_template('mainpage.html')
 
 @app.route('/tasks')
 def tasks():
@@ -144,10 +144,6 @@ def submit_code5():
 @app.route("/profile")
 def profileuser():
     return render_template('profile.html')
-
-@app.route('/user/<int:user_id>/')
-def user_profile(user_id):
-    return "Profile page of user #{}".format(user_id), 200, {'Content-Type': 'text/markdown'}
 
 if __name__ == "__main__":
     app.run(debug=True)

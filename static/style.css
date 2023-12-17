@@ -4,7 +4,6 @@ body {
 .button1  {    
     background-color: rgb(77, 74, 74); 
     color:white;
-    border-radius: 20px; 
     width: 400px; 
     padding: 14px 40px; 
     border: 1px solid rgb(77, 74, 74);
@@ -74,7 +73,6 @@ input[type=button]  {
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(77, 74, 74); 
     color:white;
-    border-radius: 20px; 
     width: 220px; 
     padding: 14px 40px; 
     border: 1px solid rgb(77, 74, 74);
