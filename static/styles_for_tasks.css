@@ -43,7 +43,7 @@ input[type=submit]  {
 
 }
 textarea {
-    width: 50%;
+    width: 95%;
     background-color: rgb(77, 74, 74);
     color:white;
     font-size: 20px;
@@ -71,7 +71,7 @@ textarea {
     background-color: rgb(77, 74, 74);
     padding: 14px 20px;
     border-radius: 10px; 
-    width: 50%; 
+    width: 95%; 
     font-size: 20px;
     color: white;
     font: inherit;
@@ -80,7 +80,6 @@ textarea {
 .tasktext {
     background-color: rgb(77, 74, 74);
     width: 95%;
-    border-radius: 20px;
     border: 1px solid rgb(77, 74, 74);
     padding: 20px;
 }
