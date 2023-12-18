@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="shortcut icon" type="image/x-icon" href="static/A.ico" >
-  <title>User Profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="static/images/A.ico" >
+    <title>ATOS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
 </head>
 <body>
-    <body style="background-color:rgb(30, 30, 30)">
-    <h1> This may have been your profile</h1>
-
+      <h3>{{data[0]}}</h3>
+    <div>
+      <h5>Task 1: {{data[2]}}</h5>
+      <h5>Task 2: {{data[3]}}</h5>
+      <h5>Task 3: {{data[5]}}</h5>
+      <h5>Task 5: {{data[5]}}</h5>
+      <h5>Task 5: {{data[6]}}</h5>
+    </div>
+    <form>
+    <center><button class="button1" formaction="http://127.0.0.1:5000/">Main page</button></center><br>
+    <center><button class="button1" formaction="http://127.0.0.1:5000/profile/logout">Log out</button></center>
+  </form>
 </body>
 </html>

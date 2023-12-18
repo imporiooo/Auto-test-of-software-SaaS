@@ -19,13 +19,19 @@ def tasks():
 
 @app.route('/tasks/task1')
 def task1():
-    return render_template('task1.html')
+    if 'username' in session:
+        return render_template('task1.html')
+    else:
+        return redirect(url_for('profileuser'))
 
 @app.route('/tasks/task1/submit', methods=['POST'])
 def submit_code1():
     user_code1 = request.form['user_code']
     print(user_code1)
-
+    
+    conn = sqlite3.connect('login_database.db')
+    cursor = conn.cursor()
+         
     
     with open('user_code1.py', 'w') as file:
         file.write(user_code1)
@@ -35,6 +41,12 @@ def submit_code1():
 
     # Проверяем результат выполнения тестов
     if result.returncode == 0:
+        cursor.execute("""
+                UPDATE users SET task1 = ? WHERE username = ?
+            """, ('Correct',session["username"]))
+        conn.commit()
+        cursor.close()
+        conn.close()
         return render_template('correct.html')
     else:
         return render_template('incorrect.html')
@@ -46,20 +58,32 @@ def submit_code1():
 
 @app.route('/tasks/task2', methods=['POST', 'GET'])
 def task2():
-    return render_template('task2.html')
+    if 'username' in session:
+        return render_template('task2.html')
+    else:
+        return redirect(url_for('profileuser'))
 
 @app.route('/tasks/task2/submit', methods=['POST'])
 def submit_code2():
     user_code2 = request.form['user_code']
     print(user_code2)
 
-    
+    conn = sqlite3.connect('login_database.db')
+    cursor = conn.cursor()
+
+
     with open('user_code2.py', 'w') as file:
         file.write(user_code2)
 
     result = subprocess.run(['pytest', 'test_user_code2.py'], capture_output=True, text=True)
 
     if result.returncode == 0:
+        cursor.execute("""
+                UPDATE users SET task2 = ? WHERE username = ?
+            """, ('Correct',session["username"]))
+        conn.commit()
+        cursor.close()
+        conn.close()
         return render_template('correct.html')
     else:
         return render_template('incorrect.html')
@@ -71,12 +95,18 @@ def submit_code2():
     
 @app.route('/tasks/task3')
 def task3():
-    return render_template('task3.html')
+    if 'username' in session:
+        return render_template('task3.html')
+    else:
+        return redirect(url_for('profileuser'))
 
 @app.route('/tasks/task3/submit', methods=['POST'])
 def submit_code3():
     user_code3 = request.form['user_code']
     print(user_code3)
+
+    conn = sqlite3.connect('login_database.db')
+    cursor = conn.cursor()
 
     
     with open('user_code3.py', 'w') as file:
@@ -85,6 +115,12 @@ def submit_code3():
     result = subprocess.run(['pytest', 'test_user_code3.py'], capture_output=True, text=True)
 
     if result.returncode == 0:
+        cursor.execute("""
+                UPDATE users SET task3 = ? WHERE username = ?
+            """, ('Correct',session["username"]))
+        conn.commit()
+        cursor.close()
+        conn.close()
         return render_template('correct.html')
     else:
         return render_template('incorrect.html')
@@ -95,13 +131,20 @@ def submit_code3():
     
 @app.route('/tasks/task4')
 def task4():
-    return render_template('task4.html')
+    if 'username' in session:
+        return render_template('task4.html')
+    else:
+        return redirect(url_for('profileuser'))
 
 
 @app.route('/tasks/task4/submit', methods=['POST'])
 def submit_code4():
     user_code4 = request.form['user_code']
     print(user_code4)
+    
+    conn = sqlite3.connect('login_database.db')
+    cursor = conn.cursor()
+
 
     
     with open('user_code4.py', 'w') as file:
@@ -110,6 +153,12 @@ def submit_code4():
     result = subprocess.run(['pytest', 'test_user_code4.py'], capture_output=True, text=True)
 
     if result.returncode == 0:
+        cursor.execute("""
+                UPDATE users SET task4 = ? WHERE username = ?
+            """, ('Correct',session["username"]))
+        conn.commit()
+        cursor.close()
+        conn.close()
         return render_template('correct.html')
     else:
         return render_template('incorrect.html')
@@ -120,12 +169,19 @@ def submit_code4():
     
 @app.route('/tasks/task5')
 def task5():
-    return render_template('task5.html')
+    if 'username' in session:
+        return render_template('task5.html')
+    else:
+        return redirect(url_for('profileuser'))
 
 @app.route('/tasks/task5/submit', methods=['POST'])
 def submit_code5():
     user_code5 = request.form['user_code']
     print(user_code5)
+    
+    conn = sqlite3.connect('login_database.db')
+    cursor = conn.cursor()
+
 
     
     with open('user_code5.py', 'w') as file:
@@ -134,6 +190,12 @@ def submit_code5():
     result = subprocess.run(['pytest', 'test_user_code5.py'], capture_output=True, text=True)
 
     if result.returncode == 0:
+        cursor.execute("""
+                UPDATE users SET task5 = ? WHERE username = ?
+            """, ('Correct',session["username"]))
+        conn.commit()
+        cursor.close()
+        conn.close()
         return render_template('correctved.html')
     else:
         return render_template('incorrect.html')
@@ -142,10 +204,14 @@ def submit_code5():
     
 
 
-@app.route("/profile")
+@app.route("/profile", methods=['GET', 'POST'])
 def profileuser():
     if 'username' in session:
-        return render_template('profile.html')
+        conn = sqlite3.connect('login_database.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM users WHERE username=?', (session['username'],))
+        output = cursor.fetchone()
+        return render_template('profile.html',data=output)
     else:
         return render_template('profilereg.html')
 
@@ -171,7 +237,12 @@ def register():
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
                 username TEXT,
-                password_hash TEXT
+                password_hash TEXT,
+                task1 TEXT default 'Incorrect',
+                task2 TEXT default 'Incorrect',
+                task3 TEXT default 'Incorrect',
+                task4 TEXT default 'Incorrect',
+                task5 TEXT default 'Incorrect'
             )
         """)
 
@@ -201,6 +272,7 @@ def register():
         # Закрываем соединение
         cursor.close()
         conn.close()
+        return redirect(url_for('login'))
 
     return render_template('register.html')
 # Роут для страницы авторизации
@@ -222,7 +294,7 @@ def login():
             # Авторизация успешна, сохраняем имя пользователя в сессии
             session['username'] = username
             conn.close()
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('profileuser'))
         else:
             # Неправильное имя пользователя или пароль
             conn.close()
@@ -244,9 +316,9 @@ def dashboard():
 def logout():
     # Удаляем имя пользователя из сессии
     session.pop('username', None)
-    return redirect(url_for('login'))
+    return redirect(url_for('profileuser'))
 
 if __name__ == "__main__":
-    app.secret_key = 'super secret key'
+    app.secret_key = 'im in your walls'
     app.config['SESSION_TYPE'] = 'filesystem'
     app.run(debug=True)

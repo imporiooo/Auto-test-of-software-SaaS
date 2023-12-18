@@ -1,0 +1,87 @@
+body {
+    background-color: rgb(30, 30, 30);
+}
+h1 {
+    color:white;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size:100px;
+    text-align:center;
+    
+}
+h3 {
+    color:white;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size:70px;
+    text-align:center;
+}
+h4 {
+    color:white;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size:30px;
+    text-align:center;
+}
+h5 {
+    color:white;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size:30px;
+    text-align:left;
+    position: relative;
+    left: 15%;
+}
+p1 {
+    color: white; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align:center;
+}
+p2 {
+    color: grey; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+div {
+    background-color: rgb(77, 74, 74);
+    width: 700px;
+    border-radius: 20px;
+    border: 1px solid rgb(77, 74, 74);
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.button1  {    
+    background-color: rgb(77, 74, 74); 
+    color:white;
+    width: 400px; 
+    padding: 14px 40px; 
+    border: 1px solid rgb(77, 74, 74);
+    transition-duration: 0.4s;
+    font-size: 25px;
+    position: relative;
+    top: 500px;
+}
+.button2  {    
+    background-color: rgb(77, 74, 74); 
+    color:white;
+    border-radius: 20px; 
+    width: 400px; 
+    padding: 14px 40px; 
+    border: 1px solid rgb(77, 74, 74);
+    transition-duration: 0.4s;
+    font-size: 25px;
+}
+.button3  {    
+    background-color: rgb(77, 74, 74); 
+    color:white;
+    width: 400px; 
+    padding: 14px 40px; 
+    border: 1px solid rgb(77, 74, 74);
+    transition-duration: 0.4s;
+    font-size: 25px;
+}
+button:hover {
+    background-color: black;
+    color: white;
+}

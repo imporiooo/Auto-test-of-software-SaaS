@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="static/A.ico" >
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/A.ico" >
     <title>Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylereg.css') }}">
 </head>
 <body>
-    <form method="post">
-        <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter your name" name="username" id="username" required> <br><br>
-        <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="password" required>
-    <input type="submit" style="cursor:pointer" value="register">
+    <h1>Register</h1>
+    <div>
+    <form  method="post">
+        <label for="username"><p1>Username</p1></label><br><br>
+    <input type="text" placeholder="Enter your username" name="username" id="username" autocomplete="off" required> <br><br>
+        <label for="password"><p1>Password</p1></label><br><br>
+    <input type="password" placeholder="Enter Password" name="password" id="password" required><br><br>
+    <input type="submit" target="/profile/login" style="cursor:pointer" value="register">
     </form>
+    </div>
 </body>
 </html>

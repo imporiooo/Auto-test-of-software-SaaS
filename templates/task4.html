@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="shortcut icon" type="image/x-icon" href="static/A.ico" >
+  <link rel="shortcut icon" type="image/x-icon" href="static/images/A.ico" >
   <title>Task4</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles_for_tasks.css') }}">
@@ -21,6 +21,9 @@
         Программа должна вывести вещественные корни уравнения каждый на отдельной строке, если они существуют, или текст «No roots» в противном случае.</label>
       </div>
       <br>
+      <form>
+        <button class="button1" formaction="http://127.0.0.1:5000/profile">Profile</button>
+      </form>
       <form action="/tasks/task4/submit" method="post">
         <div class="grow-wrap">
           <textarea id="textarea" name="user_code" rows="15" cols="65" placeholder="Write your code in Python here" required onInput="this.parentNode.dataset.replicatedValue = this.value" spellcheck="false"

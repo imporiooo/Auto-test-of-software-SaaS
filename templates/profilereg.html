@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="static/A.ico" >
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/A.ico" >
     <title>ATOS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Register</h1>
+    <h3>You are not logged in</h3>
+    <laber for="reg"><h4>Don't have an account?</h4></laber>
 <form>
-    <center><h2><button class="button1" formaction="http://127.0.0.1:5000/profile/register">register</button></h2></center>
+    <center><button class="button3" name="reg" formaction="http://127.0.0.1:5000/profile/register">register</button></center>
+    <laber for="log"><h4>Already have an account?</h4></laber>
+    <center><button class="button3" name="log" formaction="http://127.0.0.1:5000/profile/login">login</button></center>
 </form>
 </body>
 </html> 
