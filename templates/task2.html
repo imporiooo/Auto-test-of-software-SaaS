@@ -23,8 +23,8 @@
     </form>
     <form action="/tasks/task2/submit" method="post">
       <div class="grow-wrap">
-        <textarea id="textarea" name="user_code" rows="15" cols="65" placeholder="Write your code in Python here" required onInput="this.parentNode.dataset.replicatedValue = this.value" spellcheck="false"
-        onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}" ></textarea>
+        <textarea id="textarea" name="user_code" rows="15" cols="65" required onInput="this.parentNode.dataset.replicatedValue = this.value" spellcheck="false"
+        onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}" >def ordered_num(num):</textarea>
       </div>
         <input type="submit" style="cursor:pointer" value="Save your answer">
     </form>
