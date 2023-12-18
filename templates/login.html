@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <form action="/profile" method="post">
+    <form  method="post">
         <label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter your name" name="username" id="username" required> <br><br>
         <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id="password" required>
-    <input type="submit" style="cursor:pointer" value="login">
+    <input type="submit" target="/profile" style="cursor:pointer" value="login">
     </form>
 </body>
 </html>

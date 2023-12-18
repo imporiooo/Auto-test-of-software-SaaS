@@ -167,28 +167,40 @@ def register():
         # Подключение к базе данных
         conn = sqlite3.connect('login_database.db')
         cursor = conn.cursor()
+         
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS users (
+                username TEXT,
+                password_hash TEXT
+            )
+        """)
+
+        conn.commit()
 
         # Проверка, что пользователь с таким именем еще не зарегистрирован
         cursor.execute('SELECT * FROM users WHERE username=?', (username,))
         existing_user = cursor.fetchone()
+
+        # Хэшируем пароль
+        hashed_password = hash_password(password)
 
         if existing_user:
             # Пользователь с таким именем уже существует
             conn.close()
             return render_template('register.html', error='Username already exists')
 
-        # Хэшируем пароль
-        hashed_password = hash_password(password)
 
         # Вставка данных в таблицу
-        cursor.execute('INSERT INTO users (username, password_hash) VALUES (?, ?)', (username, hashed_password))
-        conn.commit()
+        else:
+            cursor.execute("""
+                INSERT INTO users (username, password_hash)
+                VALUES (?, ?)
+            """, (username, hashed_password))
+            conn.commit()
 
         # Закрываем соединение
+        cursor.close()
         conn.close()
-
-        # Редирект на страницу авторизации после успешной регистрации
-        return redirect(url_for('login'))
 
     return render_template('register.html')
 # Роут для страницы авторизации
@@ -206,7 +218,7 @@ def login():
         cursor.execute('SELECT * FROM users WHERE username=?', (username,))
         user = cursor.fetchone()
 
-        if user and check_password(password, user[2]):
+        if user and check_password(password, user[1]):
             # Авторизация успешна, сохраняем имя пользователя в сессии
             session['username'] = username
             conn.close()
@@ -235,6 +247,6 @@ def logout():
     return redirect(url_for('login'))
 
 if __name__ == "__main__":
-    app.run(debug=True)
-if __name__ == "__main__":
+    app.secret_key = 'super secret key'
+    app.config['SESSION_TYPE'] = 'filesystem'
     app.run(debug=True)
