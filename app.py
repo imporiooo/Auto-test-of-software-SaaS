@@ -209,8 +209,23 @@ def profileuser():
     if 'username' in session:
         conn = sqlite3.connect('login_database.db')
         cursor = conn.cursor()
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS users (
+                username TEXT,
+                password_hash TEXT,
+                task1 TEXT default 'Incorrect',
+                task2 TEXT default 'Incorrect',
+                task3 TEXT default 'Incorrect',
+                task4 TEXT default 'Incorrect',
+                task5 TEXT default 'Incorrect'
+            )
+        """)
+
+        conn.commit()
         cursor.execute('SELECT * FROM users WHERE username=?', (session['username'],))
         output = cursor.fetchone()
+        cursor.close()
+        conn.close()
         return render_template('profile.html',data=output)
     else:
         return render_template('profilereg.html')
