@@ -290,14 +290,14 @@ def register():
         return redirect(url_for('login'))
 
     return render_template('register.html')
-# Роут для страницы авторизации
+
+
 @app.route('/profile/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
 
-        # Подключение к базе данных
         conn = sqlite3.connect('login_database.db')
         cursor = conn.cursor()
 
@@ -317,19 +317,9 @@ def login():
 
     return render_template('login.html')
 
-# Роут для страницы "Dashboard"
-@app.route('/profile/dashboard')
-def dashboard():
-    # Проверяем, авторизован ли пользователь
-    if 'username' in session:
-        return f'Hello, {session["username"]}! This is your dashboard.'
-    else:
-        return redirect(url_for('login'))
 
-# Роут для выхода из системы
 @app.route('/profile/logout')
 def logout():
-    # Удаляем имя пользователя из сессии
     session.pop('username', None)
     return redirect(url_for('profileuser'))
 
