@@ -9,12 +9,33 @@
 <body>
       <h3>{{data[0]}}</h3>
     <div>
-      <h5>Task 1: {{data[2]}}</h5>
-      <h5>Task 2: {{data[3]}}</h5>
-      <h5>Task 3: {{data[5]}}</h5>
-      <h5>Task 5: {{data[5]}}</h5>
-      <h5>Task 5: {{data[6]}}</h5>
+      {% if data[2]=='Correct' %}
+      <h5>Task 1: &#9989</h5>
+      {% else %}
+      <h5>Task 1: &#10060</h5>
+      {% endif %}
+      {% if data[3]=='Correct' %}
+      <h5>Task 2: &#9989</h5>
+      {% else %}
+      <h5>Task 2: &#10060</h5>
+      {% endif %}
+      {% if data[4]=='Correct' %}
+      <h5>Task 3: &#9989</h5>
+      {% else %}
+      <h5>Task 3: &#10060</h5>
+      {% endif %}
+      {% if data[5]=='Correct' %}
+      <h5>Task 4: &#9989</h5>
+      {% else %}
+      <h5>Task 4: &#10060</h5>
+      {% endif %}
+      {% if data[6]=='Correct' %}
+      <h5>Task 5: &#9989</h5>
+      {% else %}
+      <h5>Task 5: &#10060</h5>
+      {% endif %}
     </div>
+    <br>
     <form>
     <center><button class="button1" formaction="http://127.0.0.1:5000/">Main page</button></center><br>
     <center><button class="button1" formaction="http://127.0.0.1:5000/profile/logout">Log out</button></center>

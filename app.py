@@ -321,4 +321,4 @@ def logout():
 if __name__ == "__main__":
     app.secret_key = 'im in your walls'
     app.config['SESSION_TYPE'] = 'filesystem'
-    app.run(debug=True)
+    app.run()
