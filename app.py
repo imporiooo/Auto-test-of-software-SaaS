@@ -56,7 +56,7 @@ def submit_code1():
     
 
 
-@app.route('/tasks/task2', methods=['POST', 'GET'])
+@app.route('/tasks/task2')
 def task2():
     if 'username' in session:
         return render_template('task2.html')
@@ -326,4 +326,4 @@ def logout():
 if __name__ == "__main__":
     app.secret_key = 'im in your walls'
     app.config['SESSION_TYPE'] = 'filesystem'
-    app.run()
+    app.run(debug=True)
