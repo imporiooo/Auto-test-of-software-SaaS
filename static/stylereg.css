@@ -42,7 +42,6 @@ h1 {
     font-family: Arial, Helvetica, sans-serif; 
     font-size:100px;
     text-align:center;
-    
 }
 h3 {
     color:white;
@@ -82,8 +81,8 @@ div {
     padding: 20px;
     text-align: center;
     margin: auto;
-    position: fixed;
-    top: 40%;
+    position: absolute;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

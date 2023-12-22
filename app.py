@@ -1,4 +1,4 @@
-from flask import Flask, make_response, request, render_template, redirect, url_for, session
+from flask import Flask, make_response, request, render_template, redirect, url_for, session, flash
 import subprocess, sqlite3
 from hashlib import sha256
 
@@ -273,7 +273,8 @@ def register():
         if existing_user:
             # Пользователь с таким именем уже существует
             conn.close()
-            return render_template('register.html', error='Username already exists')
+            flash('This username is already taken')
+            return render_template('register.html')
 
 
         # Вставка данных в таблицу
@@ -313,7 +314,8 @@ def login():
         else:
             # Неправильное имя пользователя или пароль
             conn.close()
-            return render_template('login.html', error='Invalid username or password')
+            flash('Wrong username or password')
+            return render_template('login.html')
 
     return render_template('login.html')
 
