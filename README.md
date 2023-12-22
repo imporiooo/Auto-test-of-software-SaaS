@@ -14,9 +14,14 @@ ATOS (Auto test of software) - сервис, принцип которого з�
 
 ## Используемые инструменты
 - Python
+- Pytest
 - Flask
 - UML
 - Git
+- HTML
+- CSS
+- SQLite
+- Hashlib
 
 ## Используемые материалы
 - https://www.geeksforgeeks.org/getting-started-with-testing-in-python/
