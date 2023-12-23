@@ -33,11 +33,11 @@ def submit_code1():
     cursor = conn.cursor()
          
     
-    with open('user_code1.py', 'w') as file:
+    with open('tests/user_code1.py', 'w') as file:
         file.write(user_code1)
 
     # Запуск тестов
-    result = subprocess.run(['pytest', 'test_user_code1.py'], capture_output=True, text=True)
+    result = subprocess.run(['pytest', 'tests/test_user_code1.py'], capture_output=True, text=True)
 
     # Проверяем результат выполнения тестов
     if result.returncode == 0:
@@ -72,10 +72,10 @@ def submit_code2():
     cursor = conn.cursor()
 
 
-    with open('user_code2.py', 'w') as file:
+    with open('tests/user_code2.py', 'w') as file:
         file.write(user_code2)
 
-    result = subprocess.run(['pytest', 'test_user_code2.py'], capture_output=True, text=True)
+    result = subprocess.run(['pytest', 'tests/test_user_code2.py'], capture_output=True, text=True)
 
     if result.returncode == 0:
         cursor.execute("""
@@ -109,10 +109,10 @@ def submit_code3():
     cursor = conn.cursor()
 
     
-    with open('user_code3.py', 'w') as file:
+    with open('tests/user_code3.py', 'w') as file:
         file.write(user_code3)
 
-    result = subprocess.run(['pytest', 'test_user_code3.py'], capture_output=True, text=True)
+    result = subprocess.run(['pytest', 'tests/test_user_code3.py'], capture_output=True, text=True)
 
     if result.returncode == 0:
         cursor.execute("""
@@ -147,10 +147,10 @@ def submit_code4():
 
 
     
-    with open('user_code4.py', 'w') as file:
+    with open('tests/user_code4.py', 'w') as file:
         file.write(user_code4)
 
-    result = subprocess.run(['pytest', 'test_user_code4.py'], capture_output=True, text=True)
+    result = subprocess.run(['pytest', 'tests/test_user_code4.py'], capture_output=True, text=True)
 
     if result.returncode == 0:
         cursor.execute("""
@@ -184,10 +184,10 @@ def submit_code5():
 
 
     
-    with open('user_code5.py', 'w') as file:
+    with open('tests/user_code5.py', 'w') as file:
         file.write(user_code5)
 
-    result = subprocess.run(['pytest', 'test_user_code5.py'], capture_output=True, text=True)
+    result = subprocess.run(['pytest', 'tests/test_user_code5.py'], capture_output=True, text=True)
 
     if result.returncode == 0:
         cursor.execute("""
